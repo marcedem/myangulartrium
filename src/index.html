@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Artrium</title>
+    <base href="/">
+    <meta charset="UTF-8">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- build:css({.tmp,x/src}) assets/bundle.css -->
+
+
+    <!-- Compiled and minified CSS -->
+    <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css" media="screen,projection" />
+    <!--Import Fontawesome Icon Font-->
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
+
+    <!-- app:css -->
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body>
+
+    <artrium-main-app>
+        <i class="center-fix main-spinner fa fa-spin fa-spinner"></i>
+    </artrium-main-app>
+
+    <!-- Auth0 Lock script -->
+    <!--
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+  -->
+
+    <!-- build:js assets/lib.js -->
+
+    <!-- Non-module JS libs -->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="../node_modules/core-js/client/shim.min.js"></script>
+
+    <!-- Load libraries -->
+    <script src="../node_modules/zone.js/dist/zone.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- build:js assets/app.js -->
+    <script src="tmp/app/bundle.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:remove -->
+    <script src="../node_modules/systemjs/dist/system.js"></script>
+    <script src="systemjs.conf.js"></script>
+    <script>
+        System.import('app/main.js')
+            .catch(function(err) {
+                console.error(err);
+            });
+
+        $(document).ready(function() {
+          setInterval(function(){
+            $('select').material_select();
+            $('.modal').modal();
+            $(".modal").width($(".modal").width());
+            $(".modal").height($(".modal").height());
+          },500);
+
+
+
+        });
+
+    </script>
+    <!-- endbuild -->
+</body>
+
+</html>

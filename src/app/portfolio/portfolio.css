@@ -1,0 +1,24 @@
+.btn{
+  float:right;
+}
+input[type="file"] {
+    display: none;
+}
+.input-file {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.preview{
+ width:80%;
+
+}
+
+.modal {
+  max-height: 100% !important;
+  max-width:100% !important;
+  left:0; right:0; top:0; bottom:0; margin:auto;
+  overflow-y: hidden !important ;
+}

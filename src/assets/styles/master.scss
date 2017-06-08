@@ -1,0 +1,632 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1em;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1.125em;
+    color: #000000;
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+}
+
+ol,
+ul {
+    padding: 0 10px;
+    margin: 0 10px;
+    line-height: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 1.875em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+    font-size: 1.125em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 0.875em;
+}
+
+h2 {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+nav.art-nav-bar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+nav ul a i {
+    color: #000000;
+}
+
+nav.art-nav-bar ul li a:active {
+    outline: 0;
+    background: red;
+}
+nav.art-nav-bar ul li a:active i {
+    color: #FFF;
+}
+
+nav div a.brand-logo img {
+    padding: 10px 0px;
+}
+
+#columns {
+    column-width: 320px;
+    column-gap: 15px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+div#columns figure {
+    background: #FFFFFF;
+    border: 2px solid #fcfcfc;
+    box-shadow: 5px 7px 6px rgba(34, 25, 25, 0.4);
+    margin: 0 2px 15px;
+    padding: 15px;
+    padding-bottom: 10px;
+    /*transition: opacity .4s ease-in-out;*/
+    display: inline-block;
+}
+
+div#columns figure img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+div#columns figure div.figcaption {
+    font-size: .9rem;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 40px;
+    margin-top: -60px;
+    position: relative;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+div#columns small {
+    font-size: 1rem;
+    float: right;
+    text-transform: uppercase;
+    color: #aaa;
+}
+
+div#columns small a {
+    color: #666;
+    text-decoration: none;
+    transition: .4s color;
+}
+
+div#materialbox-overlay {
+    background-color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+footer.art-main-footer {
+    /* position: fixed;*/
+    height: 135px;
+    background-color: #37474f;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+footer.art-main-footer a {
+    color: black;
+    font-weight: 400;
+}
+
+footer.page-footer.art-main-footer .footer-copyright {
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    color: #FFF;
+}
+
+
+/*  LOGIN CONTAINER */
+
+body.art-login-body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../images/bg/sharp.png");
+}
+
+div.art-login-container {
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+div.art-logo-container {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+}
+
+div.art-logo-container>img {
+    width: 100%;
+}
+
+div.art-login-slogan {
+    width: 65%;
+    line-height: 12px;
+    margin: 0 auto;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: rgb(250, 255, 189);
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+
+div.art-login-option,
+div.art-register-option {
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+div.art-register-option {
+    border-radius: 0;
+}
+
+form>div.art-login-option,
+form>div.art-register-option {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+div.art-login-option>div {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
+
+div.art-register-option>div.input-field {
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 70px;
+    margin-top: 25px;
+}
+
+div.art-login-option>div>h3 {
+    margin: 0;
+}
+
+div.art-login-option>div:first-child,
+div.art-login-option>div:nth-child(2) {
+    border-bottom: 1px solid #bbbaba;
+}
+
+div.art-register-option input {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+div.art-register-option input#password-confirm,
+div.art-register-option input#password-confirm:hover {
+    border-bottom: 0px solid #bbbaba;
+}
+
+div.art-register-option input:not([type]):focus:not([readonly]),
+div.art-register-option input[type=text]:focus:not([readonly]),
+div.art-register-option input[type=password]:focus:not([readonly]),
+div.art-register-option input[type=email]:focus:not([readonly]),
+div.art-register-option input[type=url]:focus:not([readonly]),
+div.art-register-option input[type=time]:focus:not([readonly]),
+div.art-register-option input[type=date]:focus:not([readonly]),
+div.art-register-option input[type=datetime]:focus:not([readonly]),
+div.art-register-option input[type=datetime-local]:focus:not([readonly]),
+div.art-register-option input[type=tel]:focus:not([readonly]),
+div.art-register-option input[type=number]:focus:not([readonly]),
+div.art-register-option input[type=search]:focus:not([readonly]),
+div.art-register-option textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #bbbaba;
+    box-shadow: 0 1px 0 0 #bbbaba;
+}
+
+div.art-register-btn-panel,
+div.art-login-btn-panel {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+div.art-register-btn-panel a.btn,
+div.art-login-btn-panel a.btn,
+div.art-login-btn-panel div.art-sign-up-facebook {
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+div.art-register-btn-panel a.btn.btn-cancel,
+div.art-login-btn-panel a.btn.btn-cancel {
+    width: 100px;
+}
+
+div.art-register-btn-panel a.btn.btn-register,
+div.art-login-btn-panel a.btn.btn-register {
+    width: 150px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+div.art-login-facebook {
+    margin-top: 100px;
+}
+
+
+/*==================================================
+=            MODAL POPUP DESIGN CSS RULES          =
+===================================================*/
+
+div.art-modal-container>div#art-modal {
+    width: 80%;
+    max-height: 85%;
+}
+
+div.art-modal-container>div#art-modal.modal .modal-content {
+    padding: 0px 12px;
+}
+
+img#mimg {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+div.avatar-holder img.avatar {
+    /* Rounded avatars */
+    float: left;
+    /*  margin-top: 1em;
+    margin-right: 1em; */
+    margin: 0 auto;
+    position: relative;
+    width: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0, 0, 0, .2);
+}
+
+div.avatar-details {
+    height: 60px;
+}
+
+div.comment-details textarea.materialize-textarea {
+    overflow-y: hidden;
+    padding: .8rem 0 1rem 0;
+    resize: none;
+    min-height: .3rem;
+    color: #000000;
+    height: 15px !important;
+}
+
+div.avatar-details div.username-holder {
+    padding: 12px;
+}
+
+div.avatar-details div.username-holder>h3 {
+    font-weight: 700;
+}
+
+div.art-artwork-details {
+    margin: 12px 0px;
+}
+
+div.art-artwork-details>div {
+    font-size: 10px;
+    height: 30px;
+    margin-bottom: 6px;
+}
+
+div.art-artwork-details>div.art-description-box {
+    height: 70px;
+    overflow: scroll;
+    font-size: 12px;
+}
+
+div.art-artwork-details>div>span.art-details-label {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.my-drop-zone {
+    border: dotted 3px lightgray;
+}
+
+.nv-file-over {
+    border: dotted 3px red;
+}
+
+
+/* Default class applied to drop zones on over */
+
+.another-file-over-class {
+    border: dotted 3px green;
+}
+
+
+/*==================================================
+=                        Media Queries             =
+==================================================*/
+
+
+/*==========  Mobile First Method  ==========*/
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) {}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 480px) {}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {
+    div.container.art-container {
+        margin-top: 80px;
+    }
+}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {
+    div.container.art-container.art-register-login-container {
+        margin-top: 120px;
+        width: 992px;
+        height: auto;
+        padding: 100px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("../images/bg/sharp.png");
+        border-radius: 5px;
+    }
+}
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {}
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (max-width: 1200px) {
+    .card-image.account-card-img {
+        max-width: 10% !important;
+    }
+}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 20%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    .hide-on-med-and-down {
+        display: block !important;
+        margin-right: -40px;
+    }
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 768px) {
+    #columns {
+        column-gap: 0px;
+    }
+    #columns figure {
+        width: 100%;
+    }
+    div.art-login-container {
+        width: 100%;
+        height: 560px;
+        margin: 0 auto;
+        border-radius: 5px;
+        margin-top: 65px;
+    }
+    div.art-logo-container>img {
+        padding-top: 40px;
+    }
+    nav div a.brand-logo img {
+        padding: 7px 0px;
+        margin-left: 15px;
+    }
+}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 480px) {
+    div.art-login-container {
+        margin-top: 12%;
+    }
+    div.art-logo-container>img {
+        padding-top: 20px;
+    }
+    div.art-login-option,
+    div.art-register-option {
+        width: 290px;
+    }
+    div.art-login-option.art-login-facebook {
+        margin-top: 120px;
+        position: relative;
+    }
+}
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (max-width: 320px) {
+    div.art-login-container {
+        margin-top: 5px;
+    }
+}

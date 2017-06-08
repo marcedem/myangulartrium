@@ -1,0 +1,38 @@
+<div class="container art-container">
+    <div class="col s12 m8 l6">
+        <h2 class="header">Account Details</h2>
+        <div class="card horizontal">
+
+            <div class="card-image account-card-img">
+                <img src="/assets/images/bg/accountBadge1.jpg" alt="Artrium Logo Login">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <div class="right">
+                        <a class="btn-floating btn-large waves-effect waves-light green">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input value="{{currentUser.username}}" id="first_name" type="text" class="validate">
+                            <label class="active" for="first_name">First Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input value="{{currentUser.last_name}}" id="last_name" type="text" class="validate">
+                            <label class="active" for="first_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input value="{{currentUser.email}}" id="user_email" type="text" class="validate">
+                            <label class="active" for="user_email">Name</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,242 @@
+<div class = "container" id="artrium-portfolio">
+<!--
+  <div class="row">
+
+                  <div class="row">
+                     <h1>Portfolio</h1>
+                     <span flex></span>
+                     <label class="waves-effect waves-light btn">
+                         <span>ADD</span>
+
+                         <input  type="file" multiple (change)="fileChange(input)"  #input />
+
+                     </label>
+
+
+
+                  </div>
+
+                  <div class="row" [hidden]="!data.image">
+                    <div class="col-md-8">
+                      <span class="result rounded"  >
+                        <img-cropper #cropper [image]="data"  [settings]="cropperSettings"></img-cropper>
+                      </span>
+                    </div>
+                    <div class="col-md-4">
+                      <h3>Preview</h3>
+                      <span class="result rounded" *ngIf="data.image" >
+                          <img class="img-responsive preview" [src]="data.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+                      </span>
+                    </div>
+                    <br />
+                    <br />
+                    <a class="waves-effect waves-light btn" data-target="modal1">Upload</a>
+                  </div>
+
+
+
+              <div class="container art-container">
+                      <div id="columns" >
+                          <figure *ngFor="let art of list.arts">
+                              <img src="{{art.url}}" />
+                              <span class="card-title">{{art.description}}</span>
+
+                          </figure>
+                      </div>
+                  </div>
+
+
+
+    </div>
+  </div>
+ <!-- Modal Structure -->
+ <!--
+   <div id="modal1" class="modal">
+    <form (ngSubmit)="UploadArt()" #fupload = "ngForm">
+         <div class="row" class="form-group">
+           <div class="col-md-4">
+              <img class="" [src]='data.image' />
+           </div>
+           <div class="col-md-8">
+                <div class="input-field col s6">
+                  <input  id="title"  [(ngModel)]="model.title" name="title" type="text" class="form-control">
+                  <label for="title">Title</label>
+                </div>
+                <div class="input-field col s6">
+                   <input  id="description" [(ngModel)]="model.description" name="description" type="text" class="form-control">
+                   <label for="description">Description</label>
+                </div>
+                <div class="input-field col s6">
+                      <input  id="category_id" type="text" [(ngModel)]="model.category_id" name="technic" class="form-control">
+                      <label for="category_id">Category</label>
+                </div>
+                <div class="input-field col s6">
+                     <input  id="year" type="text" [(ngModel)]="model.year" name="year" class="form-control">
+                     <label for="year">Year</label>
+                </div>
+                <div class="input-field col s6">
+                    <input  id="dimensions" [(ngModel)]="model.dimensions" name="dimensions" type="text" class="form-control">
+                    <label for="dimensions">Dimensions</label>
+                </div>
+
+                <div class="input-field col s6">
+                      <input  id="technic" type="text" [(ngModel)]="model.technic" name="technic" class="form-control">
+                      <label for="technic">Technic</label>
+                </div>
+
+
+            </div>
+
+
+             <div class="modal-footer">
+                 <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+             </div>
+           </div>
+      </form>
+   </div>
+-->
+
+
+<div>
+	<div class="container art-container">
+					<div id="columns" >
+							<figure *ngFor="let art of list.arts">
+									<img src="{{art.url}}" />
+									<span class="card-title">{{art.description}}</span>
+
+							</figure>
+					</div>
+					<a class="waves-effect waves-light btn" data-target="modal1">New Art</a>
+			</div>
+</div>
+
+<div id="modal1"  class="modal modal-fixed-footer">
+	  <form (ngSubmit)="UploadArt()" class="col s12">
+			<div class="modal-content">
+				<section>
+
+	        <div class="row">
+	            <div class="">
+	              <section  role="main" >
+
+	                    <div class="row">
+														<h2>New Art</h2>
+	                          <div class="input-field col s12">
+	                            <input  id="title" [(ngModel)]="model.title" name="title" type="text" class="validate">
+	                            <label for="title">Title</label>
+	                          </div>
+	                          <div class="input-field col s12">
+															 <label for="category" class="active" >Category</label>
+	                            <select [(ngModel)]="model.category_id" name="category" id="category" class="browser-default">
+	                              <option  value="" disabled selected>Choose your option</option>
+	                              <option value="1">Painting</option>
+	                              <option value="2">Drawing</option>
+	                              <option value="3">Photography</option>
+	                              <option value="4">Street Art</option>
+	                              <option value="4">Other</option>
+	                            </select>
+
+	                          </div>
+	                          <div class="input-field col s12">
+	                            <label for="width" class="active">Artwork Width</label>
+	                            <input [(ngModel)]="model.width" name="width" placeholder="width-cm" id="width" min="1" max="1000"  type="number">
+
+	                          </div>
+	                          <div class="input-field col s12">
+	                            <input [(ngModel)]="model.height" name="height" placeholder="height-cm" id="height" min="1" max="1000"  type="number">
+	                            <label for="height" class="active">Artwork Heigth</label>
+	                          </div>
+	                          <div class="input-field col s12">
+	                            <input [(ngModel)]="model.depth" name="depth" placeholder="depth-cm"  min="1" max="1000"  type="number">
+	                            <label for="depth" class="active">Artwork Depth</label>
+	                          </div>
+	                          <div class="input-field col s12">
+	                            <input  [(ngModel)]="model.year" name="year" id="year" min="1900" max="2020"  type="number">
+	                            <label for="year">Year of Creation</label>
+	                          </div>
+	                          <div class="input-field col s12">
+	                            <input  id="place" [(ngModel)]="model.place"  name="place" type="text" >
+	                            <label for="place">Place of Creation</label>
+	                          </div>
+
+	                          <div class="input-field col s12">
+	                                  <textarea [(ngModel)]="model.description" name="description" id="description" class="materialize-textarea"></textarea>
+	                                  <label for="description">Your Artwork Description</label>
+	                          </div>
+
+														<label class="waves-effect waves-light btn">
+																 <span>ADD FILE</span>
+																<input type="file" ng2FileSelect [uploader]="uploader" />
+														 </label>
+
+
+														<div class="row">
+
+															 <div class="col s12" style="margin: 25px">
+
+																 <table class="table">
+																		 <thead>
+																				 <tr>
+																						 <th width="50%">Name</th>
+																						 <th>Size</th>
+																						 <th>Progress</th>
+																						 <th>Status</th>
+																						 <th>Actions</th>
+																				 </tr>
+																		 </thead>
+																		 <tbody>
+																				 <tr *ngFor="let item of uploader.queue">
+																						 <td><strong>{{ item?.file?.name }}</strong></td>
+																						 <td *ngIf="uploader.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+																						 <td *ngIf="uploader.isHTML5">
+																								 <div class="progress" style="margin-bottom: 0;">
+																										 <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+																								 </div>
+																						 </td>
+																						 <td class="text-center">
+																								 <span *ngIf="item.isSuccess"><i class="fa fa-check" aria-hidden="true"></i></span>
+																								 <span *ngIf="item.isCancel"><i class="fa fa-ban" aria-hidden="true"></i></span>
+																								 <span *ngIf="item.isError"><i class="fa fa-trash" aria-hidden="true"></i></span>
+																						 </td>
+
+																				 </tr>
+																		 </tbody>
+																 </table>
+
+																 <div>
+																		 <div>
+																				 Queue progress:
+																				 <div class="progress" style="">
+																						 <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+																				 </div>
+																		 </div>
+
+															 			<button type="button" class="btn btn-warning btn-s" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+															 					<i class="fa fa-ban" aria-hidden="true"></i><span class="">Cancel</span>
+															 			</button>
+																		<button type="button" class="btn btn-danger btn-s" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+																				<i class="fa fa-trash-o" aria-hidden="true"></i><span class="">Remove</span>
+																		</button>
+																 </div>
+
+														 </div>
+
+												 </div>
+
+
+	                    </div>
+
+	              </section>
+	            </div>
+	          </div>
+	    </section>
+
+		  </div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success btn-s" type="submit" name="action" [disabled]="!uploader.getNotUploadedItems().length">
+						<i class="fa fa-upload" aria-hidden="true"></i><span class="">Upload Art </span>
+			 </button>
+
+			</div>
+	  </form>		
+</div>

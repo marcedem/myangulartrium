@@ -1,0 +1,8 @@
+<div class="container art-container">
+    <div id="columns" *ngIf="list.length">
+        <figure *ngFor="let art of list">
+            <img src="{{art.url}}" />
+            <span class="card-title">{{art.description}}</span>
+    </figure>
+</div>
+</div>

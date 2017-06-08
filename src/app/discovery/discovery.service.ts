@@ -1,0 +1,67 @@
+/* tslint:disable */ 
+import {Injectable} from '@angular/core';
+import {Http, Response, Headers} from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import {Observable} from 'rxjs/Observable';
+import {ArtModel} from './Art.model';
+
+@Injectable()
+export class DiscoveryService {
+
+    private actionUrl: string;
+    private headers: Headers;
+
+    constructor(private _http: Http) {
+
+        this.actionUrl = 'https://staging.artrium.me/api/top_rated_arts';
+
+        this.headers = new Headers();
+        this.headers.append('Access-Control-Allow-Origin', '*');
+        this.headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
+        this.headers.append('Content-Type', 'application/json');
+        this.headers.append('Accept', 'application/json');
+    }
+
+    public GetAll = (): Observable<ArtModel[]> => {
+        return this._http.get(this.actionUrl)
+            .map((response: Response) => <ArtModel[]>response.json()[1])
+            .catch(this.handleError);
+    }
+
+    public getAllWithoutModel() {
+
+        return this._http.get(this.actionUrl).map(res => res.json());
+
+    }
+
+    public GetSingle = (id: number): Observable<ArtModel> => {
+        return this._http.get(this.actionUrl + id)
+            .map((response: Response) => <ArtModel>response.json())
+            .catch(this.handleError);
+    }
+
+    public Add = (itemName: string): Observable<ArtModel> => {
+        let toAdd = JSON.stringify({ItemName: itemName});
+
+        return this._http.post(this.actionUrl, toAdd, {headers: this.headers})
+            .map((response: Response) => <ArtModel>response.json())
+            .catch(this.handleError);
+    }
+
+    public Update = (id: number, itemToUpdate: ArtModel): Observable<ArtModel> => {
+        return this._http.put(this.actionUrl + id, JSON.stringify(itemToUpdate), {headers: this.headers})
+            .map((response: Response) => <ArtModel>response.json())
+            .catch(this.handleError);
+    }
+
+    public Delete = (id: number): Observable<Response> => {
+        return this._http.delete(this.actionUrl + id)
+            .catch(this.handleError);
+    }
+
+    private handleError(error: Response) {
+        console.error(error);
+        return Observable.throw(error.json().error || 'Server error');
+    }
+}

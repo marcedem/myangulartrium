@@ -1,0 +1,38 @@
+<div class="container art-container art-register-login-container">
+    <div class="art-login-container">
+        <div class="art-logo-container">
+            <img src="/assets/images/logo/logo-white.png" alt="Artrium Logo Login" />
+        </div>
+
+        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="col s12 l12">
+            <div class="art-register-option">
+                <div class="input-field col s12" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                    <input type="text" class="form-control validate" id="username" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                    <label for="username">username / email</label>
+                    <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+                </div>
+                <div class="input-field col s12 form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control validate" id="password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                    <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                </div>
+            </div>
+
+            <div class="art-login-btn-panel form-group">
+                <button class="waves-effect btn left btn-cancel">CANCEL</button>
+                <button class="waves-effect btn right btn-register" [disabled]="loading">LOGIN</button>
+                <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                />
+            </div>
+
+            <div class="art-login-facebook art-login-btn-panel">
+                <div class="art-register-facebook art-sign-up-facebook btn-social btn-facebook" (click)="onFacebookLoginClick()">
+                    <h3 class="white-text center"><a class="white-text">LOGIN WITH FACEBOOK</a></h3>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
